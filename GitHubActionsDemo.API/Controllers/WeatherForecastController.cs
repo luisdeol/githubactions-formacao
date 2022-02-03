@@ -35,5 +35,8 @@ namespace GitHubActionsDemo.API.Controllers
             })
             .ToArray();
         }
+
+        public void UnusedMethod() {
+        }
     }
 }
