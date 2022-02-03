@@ -5,9 +5,8 @@ on:
     branches: [ main ]
 
 env:
-  AZURE_WEBAPP_NAME: GitHubActionsDemo   # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: './GitHubActionsDemo.API'      # set this to the path to your web app project, defaults to the repository root
-  DOTNET_VERSION: '3.1.x'           # set this to the dot net version to use
+  AZURE_WEBAPP_NAME: GitHubActionsDemo
+  AZURE_WEBAPP_PACKAGE_PATH: './GitHubActionsDemo.API'
 
 jobs:
   build:
@@ -27,7 +26,7 @@ jobs:
         run: |
           dotnet restore
           dotnet build --configuration Release
-          dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/GithubActionsDemo.API
+          dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/GithubActionsDemo.API'
       - name: Test with the dotnet CLI
         run: dotnet test
       - uses: azure/webapps-deploy@v2
