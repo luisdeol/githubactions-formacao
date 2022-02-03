@@ -26,6 +26,7 @@ namespace GitHubActionsDemo.API.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            UnusedMethod();
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
@@ -37,6 +38,7 @@ namespace GitHubActionsDemo.API.Controllers
         }
 
         public void UnusedMethod() {
+            Console.WriteLine("Do Someting");
         }
     }
 }
