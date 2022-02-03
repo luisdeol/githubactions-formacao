@@ -26,7 +26,7 @@ jobs:
         run: |
           dotnet restore
           dotnet build --configuration Release
-          dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/GithubActionsDemo.API'
+          dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/GitHubActionsDemo.API'
       - name: Test with the dotnet CLI
         run: dotnet test
       - uses: azure/webapps-deploy@v2
