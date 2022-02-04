@@ -1,0 +1,24 @@
+name: .NET Core
+ 
+on:
+ push:
+   branches: [ teste-gha ]
+ 
+jobs:
+ build:
+   runs-on: ubuntu-latest
+ 
+   steps:
+     - uses: actions/checkout@v2
+     - name: Setup dotnet 5.x
+       uses: actions/setup-dotnet@v1
+       with:
+         dotnet-version: '5.x'
+     - name: Display dotnet version
+       run: dotnet --version
+     - name: Install dependencies
+       run: dotnet restore
+     - name: Build
+       run: dotnet build
+     - name: Test with the dotnet CLI
+       run: dotnet test
