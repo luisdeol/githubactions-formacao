@@ -24,7 +24,7 @@ jobs:
           dotnet build -c Release
           dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/publish'
       - uses: azure/webapps-deploy@v2
-       with:
-         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-         package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/publish'
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/publish'
