@@ -35,5 +35,10 @@ namespace GitHubActionsDemo.API.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet("test1")]
+        public IActionResult Test() {
+            return Ok("Test1");
+        }
     }
 }
