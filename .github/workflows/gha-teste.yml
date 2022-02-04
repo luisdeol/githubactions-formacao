@@ -2,7 +2,7 @@ name: .NET Core
  
 on:
  push:
-   branches: [ main ]
+   branches: [ teste-gha ]
 
 env:
  AZURE_WEBAPP_NAME: gha-demo
