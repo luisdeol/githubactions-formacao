@@ -2,7 +2,7 @@ name: .NET Core
  
 on:
  push:
-   branches: [ teste-gha ]
+   branches: [ main ]
 
 env:
  AZURE_WEBAPP_NAME: gha-demo
@@ -22,10 +22,11 @@ jobs:
        run: dotnet --version
      - name: Install dependencies
        run: dotnet restore
-     - name: Build and Publish
-       run: | 
-        dotnet build -c Release 
-        dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/GitHubActionsDemo.API'
+     - name: dotnet build and publish
+       run: |
+         dotnet restore
+         dotnet build --configuration Release
+         dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/GitHubActionsDemo.API'
      - name: Test with the dotnet CLI
        run: dotnet test
      - uses: azure/webapps-deploy@v2
