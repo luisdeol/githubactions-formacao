@@ -35,5 +35,10 @@ namespace GitHubActionsDemo.API.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet("ping")]
+        public IActionResult Ping() {
+            return Ok("pong");
+        }
     }
 }
