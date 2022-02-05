@@ -38,7 +38,7 @@ namespace GitHubActionsDemo.API.Controllers
 
         [HttpGet("ping")]
         public IActionResult Ping() {
-            return Ok("pong");
+            return Ok("pong!");
         }
     }
 }
